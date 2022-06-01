@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <title>测试项目</title>
+    <style>
+        html,
+        body,
+        #app {
+          height: 100%;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/javascript">
+      window.onload=function () { 
+        document.addEventListener('touchstart',function (event) { 
+            if(event.touches.length>1){ 
+                event.preventDefault();  //阻止元素的默认行为
+            } 
+        }) 
+        var lastTouchEnd=0; 
+        document.addEventListener('touchend',function (event) { 
+            var now=(new Date()).getTime(); 
+            if(now-lastTouchEnd<=300){ 
+                event.preventDefault(); 
+            } 
+            lastTouchEnd=now;  //当前为最后一次触摸
+        },false) 
+    }
+    </script>
+</body>
+
+</html>
