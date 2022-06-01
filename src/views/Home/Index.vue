@@ -118,6 +118,7 @@ export default {
       });
       this.searchBykeyWord(this.ids.toString());
     },
+    //获取评分和下载量
     async searchBykeyWord(ids) {
       let res = await searchBykeyWord(ids);
       if (res && res.results) {
