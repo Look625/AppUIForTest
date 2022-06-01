@@ -8,4 +8,4 @@
 
 2 项目启动 npm run serve
 
-3 项目打包 npm runb build
+3 项目打包 npm run build
